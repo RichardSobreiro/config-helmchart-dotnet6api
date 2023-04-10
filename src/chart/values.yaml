@@ -1,0 +1,23 @@
+namespace: __Release.Ambiente.Namespace__
+
+environment: "__Release.Ambiente.Abreviacao__"
+
+apphost: __Release.App.Host__
+
+name: __Release.Imagem.Nome__
+
+imageRegistry: __Release.Image.FullName__
+
+container:
+  pullPolicy: Always
+  acr: __Release.Acr.Nome__.azurecr.io
+  image: __Release.Imagem.Nome__
+  tag: __Release.Imagem.Tag__
+  port: 80
+  probeurl: __Release.Container.ProbeUrl__
+replicas: 1
+
+ingress:
+  backendpathprefix: "/"
+  path: __Release.App.Path__
+  sslcertificate: "sslwildcardsobreirocombr"
